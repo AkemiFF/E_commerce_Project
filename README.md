@@ -1,6 +1,6 @@
 # E_commerce_Project
 
-#### Projet d'application web
+Projet d'application web
 
 ## Itégration au project
 
@@ -16,6 +16,9 @@
 
   - Le serveur se lancera sur `http://127.0.0.1:8000/`
 
-### PS : Vous pouvez éxécuter ces commandes directement dans le terminal de VSCode
+### PS
+
+- Vous devez être ajouter dans les collaborateurs du repository Git pour pouvoir participer
+- Vous pouvez éxécuter ces commandes directement dans le terminal de VSCode
 
 ## NOTE et REMARQUES
