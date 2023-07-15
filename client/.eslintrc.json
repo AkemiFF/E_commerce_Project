@@ -1,0 +1,11 @@
+{
+  "extends": "next/core-web-vitals",
+  //ensure that react is defined  in functional component and jsx code
+  "globals": {
+    "React": "readonly"
+  },
+  //warn for unused variables
+  "rules": {
+    "no-unused-vars": "warn"
+  }
+}

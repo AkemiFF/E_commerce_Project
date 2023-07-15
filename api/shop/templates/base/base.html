@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static "bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "theme.css" %}">
+    <link rel="stylesheet" href="{% static "custom1.css" %}">
+    <link rel="stylesheet" href="{% static "custom2.css" %}">
+    <script src="{% static "script.js" %}"></script>
+    <script src="{% static "script1.js" %}"></script>
+    <script src="{% static "script2.js" %}"></script>
+</head>
+
+<body>
+    {% block 'content' %}
+
+    {% endblock 'content' %}
+</body>
+
+</html>
