@@ -22,3 +22,8 @@ Projet d'application web
 - Vous pouvez éxécuter ces commandes directement dans le terminal de VSCode
 
 ## NOTE et REMARQUES
+
+- Pour les modifications en front, vous utiliserez les dossiers :
+
+  - /shop/static pour les `css, js, img,...`.
+  - /shop/templates pour les `html, tpl`.
