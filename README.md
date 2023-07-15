@@ -27,3 +27,5 @@ Projet d'application web
 
   - /shop/static pour les `css, js, img,...`.
   - /shop/templates pour les `html, tpl`.
+
+- Verifier la liste des taches avec de modifier des éléments.
