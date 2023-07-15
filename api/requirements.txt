@@ -3,3 +3,6 @@ Django==4.2.3
 Pillow==10.0.0
 psycopg2==2.9.6
 sqlparse==0.4.4
+django-rest-framework==3.14.0
+django-cors-headers==3.13.0
+mysqlclient==2.1.2
