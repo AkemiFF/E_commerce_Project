@@ -1,19 +1,18 @@
 from django.db import models
-
-from api.accounts.models import Client
+from accounts.models import Shopper
 
 
 class Cart(models.Model):
     quantity = models.CharField(max_length=45)
     total_price = models.CharField(max_length=45, null=True, blank=True)
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    client = models.ForeignKey(Shopper, on_delete=models.CASCADE)
 
 
 class Order(models.Model):
     order_date = models.DateField(null=True, blank=True)
     status = models.SmallIntegerField(null=True, blank=True)
     payment_details = models.CharField(max_length=45, null=True, blank=True)
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    client = models.ForeignKey(Shopper, on_delete=models.CASCADE)
 
 
 class OrderDetail(models.Model):

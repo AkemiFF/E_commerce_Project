@@ -3,3 +3,13 @@ venv
 api/E_commerce/__pycache__/*
 api/shop/__pycache__/*
 __pycache__
+api/shop/__pycache__/__init__.cpython-311.pyc
+api/shop/__pycache__/admin.cpython-311.pyc
+api/shop/__pycache__/apps.cpython-311.pyc
+api/shop/__pycache__/models.cpython-311.pyc
+api/shop/__pycache__/urls.cpython-311.pyc
+api/shop/__pycache__/views.cpython-311.pyc
+api/shop/migrations/__pycache__/__init__.cpython-311.pyc
+api/E_commerce/__pycache__/urls.cpython-311.pyc
+api/E_commerce/__pycache__/__init__.cpython-311.pyc
+api/E_commerce/__pycache__/settings.cpython-311.pyc

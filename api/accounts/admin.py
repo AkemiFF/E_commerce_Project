@@ -1,4 +1,4 @@
 from django.contrib import admin
-from accounts.models import Client
+from accounts.models import Shopper
 
-admin.site.register(Client)
+admin.site.register(Shopper)
