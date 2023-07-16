@@ -12,7 +12,7 @@ def ProductListView(request):
     data = {
         'products': [
             {
-                'name': product.name,
+                'name': product.product_name,
                 'price': product.price,
                 # Autres informations sur le produit
             }

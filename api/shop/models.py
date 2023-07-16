@@ -23,17 +23,20 @@ class OrderDetail(models.Model):
 
 
 class Invoice(models.Model):
-    invoice_id = models.IntegerField(primary_key=True)
+
     total_amount = models.CharField(max_length=45, null=True, blank=True)
     invoice_date = models.DateField(null=True, blank=True)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
 
 
 class Product(models.Model):
-    product_id = models.IntegerField(primary_key=True)
+
     product_name = models.CharField(max_length=45)
     description = models.CharField(max_length=145, null=True, blank=True)
     price = models.IntegerField(null=True, blank=True)
+
+    def __str__(self) -> str:
+        return self.product_name
 
 
 class InvoiceDetail(models.Model):
