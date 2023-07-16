@@ -6,7 +6,7 @@ interface Product {
   price: number;
 }
 
-function MyComponent() {
+function Base() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -35,4 +35,4 @@ function MyComponent() {
   );
 }
 
-export default MyComponent;
+export default Base;

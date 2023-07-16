@@ -1,11 +1,6 @@
 from django.db import models
+from django.urls import reverse
 from accounts.models import Shopper
-
-
-class Cart(models.Model):
-    quantity = models.CharField(max_length=45)
-    total_price = models.CharField(max_length=45, null=True, blank=True)
-    client = models.ForeignKey(Shopper, on_delete=models.CASCADE)
 
 
 class Order(models.Model):
@@ -14,12 +9,25 @@ class Order(models.Model):
     payment_details = models.CharField(max_length=45, null=True, blank=True)
     client = models.ForeignKey(Shopper, on_delete=models.CASCADE)
 
+    def __str__(self) -> str:
+        return self.status
+
+
+class Cart(models.Model):
+    # quantity = models.CharField(max_length=45)
+    total_price = models.CharField(max_length=45, null=True, blank=True)
+    client = models.ForeignKey(Shopper, on_delete=models.CASCADE)
+    orders = models.ManyToManyField(Order)
+
 
 class OrderDetail(models.Model):
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
     quantity = models.CharField(max_length=45, null=True, blank=True)
     unit_price = models.CharField(max_length=45, null=True, blank=True)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return self.product
 
 
 class Invoice(models.Model):
@@ -32,8 +40,17 @@ class Invoice(models.Model):
 class Product(models.Model):
 
     product_name = models.CharField(max_length=45)
-    description = models.CharField(max_length=145, null=True, blank=True)
-    price = models.IntegerField(null=True, blank=True)
+    slug = models.SlugField(max_length=128)
+    price = models.FloatField(default=0.0)
+    stock = models.IntegerField(default=0)
+    description = models.TextField(blank=True)
+    thumbnail = models.ImageField(upload_to="Products", blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Produit"
 
     def __str__(self) -> str:
         return self.product_name

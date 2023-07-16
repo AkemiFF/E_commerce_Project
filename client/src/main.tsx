@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import App from './App.tsx'
-import MyComponent from './MyComponent.tsx'
+import Base from './MyComponent.tsx'
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+let container = document.getElementById('root')!;
+ReactDOM.createRoot(container).render(
   <React.StrictMode>
-    <MyComponent />
+    <Base />
   </React.StrictMode>,
 )
