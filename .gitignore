@@ -1,7 +1,7 @@
 venv
 .vscode
-api/E_commerce/__pycache__/*
-api/shop/__pycache__/*
+api/E_commerce/__pycache__
+api/shop/__pycache__
 __pycache__
 api/shop/__pycache__/__init__.cpython-311.pyc
 api/shop/__pycache__/admin.cpython-311.pyc
