@@ -2,4 +2,4 @@ venv
 .vscode
 api/E_commerce/__pycache__/*
 api/shop/__pycache__/*
-
+__pycache__
