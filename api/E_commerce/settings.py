@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ou5nm$07q!nqw#8kp(1khtvk48=rz=!tz&m7l#p$vz4&*dpch6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', f'{BASE_DIR.parent}']
 
 
 # Application definition
@@ -134,6 +134,8 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "accounts.Shopper"
 CORS_ORIGIN_ALLOW_ALL = True
+UPLOADS_DIR = BASE_DIR.parent / 'uploads'
+directory_path = os.path.join(BASE_DIR.parent, 'uploads')
 
 
 # CORS_ORIGIN_WHITELIST = [

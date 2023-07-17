@@ -1,6 +1,11 @@
+import os
 from django.db import models
 from django.urls import reverse
 from accounts.models import Shopper
+from E_commerce.settings import UPLOADS_DIR
+from shutil import move
+from django.core.files import File as FileWrapper
+from django.conf import settings
 
 
 class Order(models.Model):
@@ -44,13 +49,31 @@ class Product(models.Model):
     price = models.FloatField(default=0.0)
     stock = models.IntegerField(default=0)
     description = models.TextField(blank=True)
-    thumbnail = models.ImageField(upload_to="Products", blank=True, null=True)
+    thumbnail = models.ImageField(
+        upload_to="img", blank=True, null=True)
 
     def __str__(self):
         return self.name
 
     class Meta:
         verbose_name = "Produit"
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        if self.thumbnail:
+            old_path = self.thumbnail.path
+            new_path = os.path.join(
+                settings.BASE_DIR.parent, 'client/static/', self.thumbnail.name)
+
+            os.makedirs(os.path.dirname(new_path), exist_ok=True)
+
+            os.rename(old_path, new_path)
+
+            self.thumbnail.name = os.path.relpath(
+                new_path, settings.BASE_DIR.parent)
+
+            super().save(update_fields=['thumbnail'])
 
     def __str__(self) -> str:
         return self.product_name

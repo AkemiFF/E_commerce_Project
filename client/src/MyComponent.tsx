@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 interface Product {
   name: string;
   price: number;
+  description: string;
+  thumbnail: string;
 }
 
 function Base() {
@@ -14,7 +16,7 @@ function Base() {
       try {
         const response = await axios.get('http://localhost:8000/api/products/');
         setProducts(response.data.products);
-        // console.log('d')
+
       } catch (error) {
         console.error(error);
       }
@@ -29,6 +31,9 @@ function Base() {
         <div key={index}>
           <h3>{product.name}</h3>
           <p>{product.price}</p>
+          <p>{product.description}</p>
+          {/* <img src="/static/img/Screenshot_2023-06-30-11-12-28_1366x768.png" alt="" rel={product.name} /> */}
+          <img src={product.thumbnail} alt="" rel={product.name} />
         </div>
       ))}
     </div>
