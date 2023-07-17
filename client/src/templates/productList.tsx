@@ -28,15 +28,18 @@ function Base() {
   return (
     <div>
       {products.map((product, index) => (
-        <div key={index}>
+        <div key={index} id={product.name}>
           <h3>{product.name}</h3>
-          <p>{product.price}</p>
-          <p>{product.description}</p>
-          <img src={product.thumbnail} alt="" rel={product.name} />
+          {/* <p>{product.price}</p> */}
+          {/* <p>{product.description}</p> */}
+          <img src={product.thumbnail} alt={product.name} />
+          <a href=''>Afficher le produit</a>
         </div>
       ))}
     </div>
   );
 }
+
+
 
 export default Base;

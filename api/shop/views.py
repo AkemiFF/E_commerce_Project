@@ -10,7 +10,7 @@ def index(request):
 
 def ProductListView(request):
     products = Product.objects.all()
-    route = f'/static/img/'
+
     data = {
         'products': [
             {
