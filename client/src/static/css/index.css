@@ -76,3 +76,9 @@ button:focus-visible {
 img {
   max-width: 15rem;
 }
+
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

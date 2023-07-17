@@ -5,8 +5,8 @@ function Header() {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                        <a href="{% url 'index' %}">
-                            <h1>AkemiShop</h1>
+                        <a href="">
+                            <h1>Shop</h1>
                         </a>
                     </li>
                     <li className="nav-item">
@@ -15,12 +15,9 @@ function Header() {
 
                     </li>
                     <li className="nav-item">
-
-                        <a href="{% url 'logout' %}">Déconnexion</a>
-
-                        <a href="{% url 'singup' %}">S'inscrire</a>
-                        <a href="{% url 'login' %}">Connéxion</a>
-
+                        <a href="">Déconnexion</a>
+                        <a href="">S'inscrire</a>
+                        <a href="">Connéxion</a>
                     </li>
                 </ul>
 
