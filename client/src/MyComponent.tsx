@@ -32,7 +32,6 @@ function Base() {
           <h3>{product.name}</h3>
           <p>{product.price}</p>
           <p>{product.description}</p>
-          {/* <img src="/static/img/Screenshot_2023-06-30-11-12-28_1366x768.png" alt="" rel={product.name} /> */}
           <img src={product.thumbnail} alt="" rel={product.name} />
         </div>
       ))}
