@@ -1,4 +1,5 @@
 import os
+from string import ascii_lowercase
 from django.db import models
 from django.urls import reverse
 from accounts.models import Shopper
@@ -14,12 +15,13 @@ class Order(models.Model):
     status = models.BooleanField(default=False)
 
     def __str__(self) -> str:
-        return self.client.username
+        return f'{self.client.username} ({len(self.unit_price)})'
 
     class Meta:
         verbose_name = 'Commande'
 
     def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
         self.unit_price
         super().save(*args, **kwargs)
 
@@ -35,7 +37,7 @@ class Order(models.Model):
             except:
                 pass
         self.payment_details = y
-        return y
+        return value
 
 
 class OrderDetail(models.Model):
@@ -45,7 +47,7 @@ class OrderDetail(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return str(self.product)
+        return f'{self.product} ({self.unit_price}$)'
 
     class Meta:
         verbose_name = 'Detail de commande'
@@ -55,10 +57,11 @@ class OrderDetail(models.Model):
         super().save(*args, **kwargs)
         self.unit_price = float(self.product.price) * float(self.quantity)
 
-        # self.order.unit_price()
-
         super().save(*args, **kwargs)
         self.order.save(*args, **kwargs)
+
+    # @property
+    # def getPrice(self):
 
 
 class Cart(models.Model):
@@ -72,6 +75,10 @@ class Cart(models.Model):
 
     def __str__(self) -> str:
         return f"{self.client.username} ({self.total_price})"
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
 
 class Product(models.Model):
